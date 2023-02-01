@@ -9,15 +9,28 @@ const subtract = function (a, b) {
 };
 
 const sum = function (x) {
-  let result = x.reduce((partialSum, a) => partialSum + a, 0);
+  let result = x.reduce((accumulator, a) => accumulator + a, 0);
   return result;
 };
 
-const multiply = function () {};
+const multiply = function (x) {
+  // We can use the reduce function again but without an initial value so it doesn't interfere with multiplication
+  let result = x.reduce((accumulator, curValue) => accumulator * curValue);
+  return result;
+};
 
-const power = function () {};
+const power = function (a, b) {
+  let result = a ** b;
+  return result;
+};
 
-const factorial = function () {};
+const factorial = function (x) {
+  if (x < 0) return -1;
+  else if (x == 0) return 1;
+  else {
+    return x * factorial(x - 1);
+  }
+};
 
 // Do not edit below this line
 module.exports = {
