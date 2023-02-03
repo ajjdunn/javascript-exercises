@@ -28,6 +28,7 @@ const factorial = function (x) {
   if (x < 0) return -1;
   else if (x == 0) return 1;
   else {
+    // We call factorial function within itself. This is recursion and it's dangerous but powerful.
     return x * factorial(x - 1);
   }
 };
